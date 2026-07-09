@@ -1,43 +1,17 @@
-elif choice == "3":
-    roll = input("Enter Roll Number to search: ")
+elif choice == "1":
+    name = input("Enter Student Name: ")
+    roll = input("Enter Roll Number: ")
+    department = input("Enter Department: ")
 
-    found = False
-    for student in students:
-        if student["Roll"] == roll:
-            print("\nStudent Found")
-            print("Name:", student["Name"])
-            print("Roll:", student["Roll"])
-            print("Department:", student["Department"])
-            found = True
-            break
+    student = {
+        "Name": name,
+        "Roll": roll,
+        "Department": department
+    }
 
-    if not found:
-        print("Student not found.")
-elif choice == "4":
-    roll = input("Enter Roll Number to update: ")
+    students.append(student)
 
-    found = False
-    for student in students:
-        if student["Roll"] == roll:
-            student["Name"] = input("Enter New Name: ")
-            student["Department"] = input("Enter New Department: ")
-            print("Student record updated successfully!")
-            found = True
-            break
+    with open("students.txt", "a") as file:
+        file.write(f"{name},{roll},{department}\n")
 
-    if not found:
-        print("Student not found.")
-elif choice == "5":
-    roll = input("Enter Roll Number to delete: ")
-
-    found = False
-    for student in students:
-        if student["Roll"] == roll:
-            students.remove(student)
-            print("Student record deleted successfully!")
-            found = True
-            break
-
-    if not found:
-        print("Student not found.")
-    
+    print("Student added successfully!")
