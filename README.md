@@ -23,4 +23,4 @@ This is a Python-based Student Management System developed as a first-year B.Tec
    python main.py
 
 ## Author
-Your Name
+Your Name:P.SANJANA
