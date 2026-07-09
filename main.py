@@ -1,10 +1,16 @@
+elif choice == "3":
+    roll = input("Enter Roll Number to search: ")
 
-    elif choice == "2":
-        if len(students) == 0:
-            print("No student records found.")
-        else:
-            print("\nStudent Records:")
-            for student in students:
-                print(student)
+    found = False
+    for student in students:
+        if student["Roll"] == roll:
+            print("\nStudent Found")
+            print("Name:", student["Name"])
+            print("Roll:", student["Roll"])
+            print("Department:", student["Department"])
+            found = True
+            break
 
+    if not found:
+        print("Student not found.")
     
